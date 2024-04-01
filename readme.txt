@@ -31,3 +31,10 @@ list of materials
 
 2. Breadboard: https://www.amazon.com/Breadboards-Solderless-Breadboard-Distribution-Connecting/dp/B07DL13RZH/ref=sr_1_5?crid=YE57C0LPLXDD&dib=eyJ2IjoiMSJ9.ZCQQRxE06SDaH7e9JlB_TTbwcmn7OZGIRCnvJtDK3PTrMH-0vpUfHIcbU5os1jzvmOHLWUF4NDdcHcptn2_vlk7Kk6u1yNofygwZOH2PEuLRtUiTCzQ60pv3_uvEXjrXiAubTjNdcrCcIJeztCgONW4m-CSDOmArskBsCsa4MC_1iH387PlTd7-h0wihlMFNk6cbCfF7GyOUSsve-HP1porakOgP6Vy4IOOESV1QM8g.whWDwAZiqsJbmR5MDd8yN38eRjK3IMcFdMg3vFPmnN0&dib_tag=se&keywords=breadboard+arduino&qid=1711417251&sprefix=breadboard+arduino%2Caps%2C141&sr=8-5
 
+3/31
+- got all pieces
+make keppad work with two lights (a and b)
+- add cardboard to map(get cardboard) sometime this week
+- time plan for mon-thurs
+
+
