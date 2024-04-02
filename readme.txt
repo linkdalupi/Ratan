@@ -37,4 +37,12 @@ make keppad work with two lights (a and b)
 - add cardboard to map(get cardboard) sometime this week
 - time plan for mon-thurs
 
+learn how to use tri colored led
+change red and blue to tri colored
+increase number of pins to 10
+mount ten leds in board 
+write logic to select color(player) with buttons a and B
+loop will read what color you pressed + number you pressed
+loop needs to remember player
+
 

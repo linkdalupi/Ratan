@@ -25,7 +25,8 @@ void setup()
 Serial.begin(9600);
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
-
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
 } 
 
 
@@ -38,13 +39,15 @@ void loop()
   {
     case '1':
       Serial.print("button 1");
-      digitalWrite(LED1, HIGH);
+      digitalWrite(LED1, LOW);
+      digitalWrite(12, HIGH);
       delay(1000);
       break;
     
     case '2':
       Serial.print("button 2");
-      digitalWrite(LED2, HIGH);
+      digitalWrite(LED1, HIGH);
+      digitalWrite(12, LOW);
       delay(1000);
       break;
   } 
