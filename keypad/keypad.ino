@@ -5,6 +5,12 @@ const byte LED1_RED = 9;
 const byte LED1_BLUE = 12;
 const byte LED2_RED = 11;
 const byte LED2_BLUE = 10;
+const byte LED3_RED = 54;
+const byte LED3_BLUE = 55;
+const byte LED4_RED = 56;
+const byte LED4_BLUE = 57;
+const byte LED5_RED = 58;
+const byte LED5_BLUE = 59;
 
 
 const byte ROWS = 4; //four rows
@@ -28,8 +34,11 @@ void setup()
   Serial.begin(9600);
   pinMode(LED1_RED, OUTPUT);
   pinMode(LED2_RED, OUTPUT);
+  pinMode(LED3_RED, OUTPUT);
   pinMode(LED1_BLUE, OUTPUT);
   pinMode(LED2_BLUE, OUTPUT);
+  pinMode(LED3_BLUE, OUTPUT);
+
 } 
 
 void loop()
@@ -61,6 +70,19 @@ void loop()
     case '5':
       digitalWrite(LED2_BLUE, HIGH);
       digitalWrite(LED2_RED, LOW);
+      delay(1000);
+      break;
+
+    case '6':
+    Serial.print("button 6");
+      digitalWrite(LED3_RED, HIGH);
+      digitalWrite(LED3_BLUE, LOW);
+      delay(1000);
+      break;
+    
+    case '7':
+      digitalWrite(LED3_BLUE, HIGH);
+      digitalWrite(LED3_RED, LOW);
       delay(1000);
       break;
   } 
