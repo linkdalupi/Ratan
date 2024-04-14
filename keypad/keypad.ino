@@ -54,6 +54,7 @@ void setup()
   pinMode(LED8_RED, OUTPUT);
   pinMode(LED9_RED, OUTPUT);
   pinMode(LED10_RED, OUTPUT);
+
   pinMode(LED1_BLUE, OUTPUT);
   pinMode(LED2_BLUE, OUTPUT);
   pinMode(LED3_BLUE, OUTPUT);
@@ -79,6 +80,11 @@ void activateLED(char button, byte redPin, byte bluePin) {
     Serial.print("blue");
     digitalWrite(bluePin, HIGH);
     digitalWrite(redPin, LOW);
+  }  
+  else if (playerSelect=='C') {
+    Serial.print("clear");
+    digitalWrite(bluePin, LOW);
+    digitalWrite(redPin, LOW);
   }
   delay(1000);
 }
@@ -93,18 +99,23 @@ void loop()
     
     switch (key)
     {
-      case '*':
+      case 'A':
         Serial.print("button A");
         playerSelect = 'A';
         break; 
 
-      case '#':
+      case 'B':
         Serial.print("button B");
         playerSelect = 'B';
+        break;
+
+      case 'C':
+        Serial.print("button B");
+        playerSelect = 'C';
         break; 
 
       case '1':
-      activateLED('1', LED1_RED, LED1_BLUE);
+        activateLED('1', LED1_RED, LED1_BLUE);
         break;
       
       case '2':
