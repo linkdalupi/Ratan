@@ -1,8 +1,8 @@
 #include <Key.h>
 #include <Keypad.h>
 
-const byte LED1_RED = 13;
-const byte LED1_BLUE = 12;
+const byte LED1_RED = 12;
+const byte LED1_BLUE = 13;
 const byte LED2_RED = 11;
 const byte LED2_BLUE = 10;
 const byte LED3_RED = 54;
@@ -39,6 +39,7 @@ byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
+char playerSelect = ' ';
 
 void setup()
 {
@@ -65,71 +66,83 @@ void setup()
   pinMode(LED10_BLUE, OUTPUT);
 } 
 
+void activateLED(char button, byte redPin, byte bluePin) {
+  Serial.print("button:");
+  Serial.println(button);
+
+  if (playerSelect=='A'){
+    Serial.print("red");
+    digitalWrite(redPin, HIGH);
+    digitalWrite(bluePin, LOW);
+  }
+  else if (playerSelect=='B') {
+    Serial.print("blue");
+    digitalWrite(bluePin, HIGH);
+    digitalWrite(redPin, LOW);
+  }
+  delay(1000);
+}
+
 void loop()
 {
   char key = keypad.getKey();
   
-  switch (key)
-  {
-    case '1':
-    Serial.print("button 1");
-      digitalWrite(LED1_BLUE, HIGH);
-      delay(1000);
-      break;
+  if(key) {
+    Serial.print(key);
+    //delay(1000);
     
-    case '2':
-    Serial.print("button 2");
-      digitalWrite(LED2_BLUE, HIGH);
-      delay(1000);
-      break;
+    switch (key)
+    {
+      case '*':
+        Serial.print("button A");
+        playerSelect = 'A';
+        break; 
 
-    case '3':
-    Serial.print("button 3");
-      digitalWrite(LED3_BLUE, HIGH);
-      delay(1000);
-      break;
-    
-    case '4':
-    Serial.print("button 4");
-      digitalWrite(LED4_BLUE, HIGH);
-      delay(1000);
-      break;
+      case '#':
+        Serial.print("button B");
+        playerSelect = 'B';
+        break; 
 
-    case '5':
-    Serial.print("button 5");
-      digitalWrite(LED5_BLUE, HIGH);
-      delay(1000);
-      break;
-    
-    case '6':
-    Serial.print("button 6");
-      digitalWrite(LED6_BLUE, HIGH);
-      delay(1000);
-      break;
+      case '1':
+      activateLED('1', LED1_RED, LED1_BLUE);
+        break;
       
-    case '7':
-    Serial.print("button 7");
-      digitalWrite(LED7_BLUE, HIGH);
-      delay(1000);
-      break;
-    
-    case '8':
-    Serial.print("button 8");
-      digitalWrite(LED8_BLUE, HIGH);
-      delay(1000);
-      break;
+      case '2':
+        activateLED('2', LED2_RED, LED2_BLUE);
+        break;
 
-    case '9':
-    Serial.print("button 9");
-      digitalWrite(LED9_BLUE, HIGH);
-      delay(1000);
-      break;
-    
-    case '0':
-    Serial.print("button 10");
-     digitalWrite(LED10_BLUE, HIGH);
-      delay(1000);
-      break;
+      case '3':
+        activateLED('3', LED3_RED, LED3_BLUE);
+        break;
+      
+      case '4':
+        activateLED('4', LED4_RED, LED4_BLUE);
+        break;
+
+      case '5':
+       activateLED('5', LED5_RED, LED5_BLUE);
+        break;
+      
+      case '6':
+        activateLED('6', LED6_RED, LED6_BLUE);
+        break;
+        
+      case '7':
+        activateLED('7', LED7_RED, LED7_BLUE);
+        break;
+      
+      case '8':
+        activateLED('8', LED8_RED, LED8_BLUE);
+        break;
+
+      case '9':
+        activateLED('9', LED9_RED, LED9_BLUE);
+        break;
+      
+      case '0':
+        activateLED('10', LED10_RED, LED10_BLUE);
+        break;
+    }
   } 
 
 }
