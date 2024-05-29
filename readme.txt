@@ -46,3 +46,14 @@ loop will read what color you pressed + number you pressed
 loop needs to remember player
 
 
+4/15 stuff to do
+
+- tape down leds(entire thing)
+- extend membrane switch module
+- spray paint soldiers (buy more)
+- write down all instructions + print (end to end test)
+- atach legs of map
+-do entire game
+++extra++
+- dop trading button thingy
+lcd+four buttons
